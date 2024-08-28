@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Listagem de Pacientes</title>
+</head>
+<body>
+    <h1>Listagem de Pacientes</h1>
+    <ul>
+        {% for paciente in pacientes %}
+            <li>{{ paciente.nome }} - {{ paciente.cpf }} - {{ paciente.servico }}</li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'cadastro_paciente' %}">Cadastrar Novo Paciente</a>
+    <a href="{% url 'index' %}">Voltar à Página Inicial</a>
+</body>
+</html>
