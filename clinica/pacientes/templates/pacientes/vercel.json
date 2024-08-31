@@ -2,14 +2,14 @@
     "version": 2,
     "builds": [
       {
-        "src": "templates/index.html",
+        "src": "pacientes/index.html/index.html",
         "use": "@vercel/static-build"
       }
     ],
     "routes": [
       {
         "src": "/(.*)",
-        "dest": "templates/index.html"
+        "dest": "pacientes/index.html"
       }
     ]
   }
