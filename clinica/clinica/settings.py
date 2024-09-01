@@ -23,7 +23,7 @@ SECRET_KEY = 'django-insecure-!@#your-secret-key-here#$'
 
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = os.getenv('DJANGO_ALLOWED_HOSTS', 'clinica-fisioterapia.vercel.app').split(',')
 
 # Application definition
 
@@ -97,7 +97,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'pt-br'
 
 TIME_ZONE = 'UTC'
 
