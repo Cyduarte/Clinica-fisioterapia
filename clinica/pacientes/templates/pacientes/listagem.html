@@ -100,13 +100,23 @@
     </nav>
     <div class="container text-center p-4 bg-white rounded shadow">
         <h1 class="mb-4">Listagem de Pacientes</h1>
+    
+        <!-- Formulário de Pesquisa -->
+        <form method="GET" action="{% url 'listagem_pacientes' %}" class="mb-4">
+            <div class="input-group">
+                <input type="text" name="search" class="form-control" placeholder="Pesquisar paciente...">
+                <div class="input-group-append">
+                    <button type="submit" class="btn btn-primary">Pesquisar</button>
+                </div>
+            </div>
+        </form>
+    
         <ul class="list-group mb-4">
             {% for paciente in pacientes %}
                 <li class="list-group-item d-flex justify-content-between align-items-center">
                     {{ paciente.nome }} - {{ paciente.cpf }} - {{ paciente.servico }}
                     <div>
                         <a href="{% url 'atualizar_paciente' paciente.id %}" class="btn btn-warning btn-sm mr-2">Atualizar</a>
-                        
                         <a href="{% url 'excluir_paciente' paciente.id %}" class="btn btn-danger btn-sm">Excluir</a>
                     </div>
                 </li>
@@ -115,9 +125,9 @@
         <a href="{% url 'cadastro_paciente' %}" class="btn btn-primary mr-2">Cadastrar Novo Paciente</a>
         <a href="{% url 'index' %}" class="btn btn-secondary">Voltar à Página Inicial</a>
     </div>
-
     
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+    </body>
+    </html>
+    
